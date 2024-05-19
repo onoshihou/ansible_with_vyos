@@ -1,0 +1,12 @@
+---
+- name: Sample4_ansible_facs
+  hosts: vyos01
+
+  tasks:
+    - name: Debug ansible_facts
+      ansible.builtin.debug:
+        var: ansible_facts
+
+    - name: Debug ansible_facts.net_hostname
+      ansible.builtin.debug:
+        var: ansible_facts.net_hostname

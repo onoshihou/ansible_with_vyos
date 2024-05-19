@@ -1,0 +1,13 @@
+---
+- name: Exam3
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Setting set_fact
+      ansible.builtin.set_fact:
+        test_hostname: "vyos01"
+
+    - name: Debug test_hostname
+      ansible.builtin.debug:
+        var: test_hostname

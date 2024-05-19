@@ -1,0 +1,13 @@
+---
+- name: Exam2
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Setting set_fact
+      ansible.builtin.set_fact:
+        ansible_play_name: "Hello Ansible!"
+
+    - name: Debug variable
+      ansible.builtin.debug:
+        var: ansible_play_name

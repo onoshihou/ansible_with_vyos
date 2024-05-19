@@ -1,0 +1,13 @@
+---
+- name: Exam1
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Setting set_fact
+      ansible.builtin.set_fact:
+        HelIo: "Hello Ansible!"
+
+    - name: Debug set_fact
+      ansible.builtin.debug:
+        var: Hello

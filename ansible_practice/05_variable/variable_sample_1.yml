@@ -1,0 +1,12 @@
+---
+- name: Sample1_vars
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+    test: "Hello Ansible!"
+
+  tasks:
+    - name: Setting vars debug
+      ansible.builtin.debug:
+        var: test

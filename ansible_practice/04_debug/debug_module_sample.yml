@@ -1,0 +1,16 @@
+---
+- name: Sample
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+    var1: Hello message!
+
+  tasks:
+    - name: Debug msg
+      ansible.builtin.debug:
+        msg: Hello Ansible!
+
+    - name: Debug var1
+      ansible.builtin.debug:
+        var: var1

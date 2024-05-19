@@ -1,0 +1,17 @@
+---
+- name: Sample1
+  hosts: vyos
+  gather_facts: false
+
+  tasks:
+    - name: Vyos01 only show commands
+      vyos.vyos.vyos_command:
+        commands:
+          - show ip route
+          - show interface
+      register: result
+      when: inventory_hostname == 'vyos01'
+
+    - name: Vyos debug show commands
+      ansible.builtin.debug:
+        var: result.stdout_lines
