@@ -1,15 +1,44 @@
-# How to init ansible_on_vyos
+# How to construct env for Ansible with vyos
 
-## git clone & init setting
+## install git
 
+```shell
+sudo dnf install -y git
 ```
-$ git clone https://github.com/apc-nw-auto-cft/ansible_on_vyos.git
 
-$ cd ansible_on_vyos
+## git clone
 
-$ bash ./init.sh
-
-$ poetry shell
-
-$ ansible-playbook xxxx.yaml
+```shell
+git clone https://github.com/onoshihou/ansible_with_vyos.git
 ```
+
+## install docker & poetry by init.sh
+
+```shell
+cd ~/ansible_on_vyos
+
+sh ./init.sh
+```
+
+## enter venv with "poetry shell"
+
+```shell
+cd ~/ansible_on_vyos
+
+poetry shell
+```
+
+## docker-compose
+
+```shell
+docker-compose -f ./init_settings/docker-compose.yml up -d
+```
+
+![environment image](./images/environment.png)
+
+## exec test playbook
+
+```shell
+ansible-navigator run ./ansible_practice/test.yml
+```
+

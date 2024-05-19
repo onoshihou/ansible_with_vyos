@@ -1,9 +1,0 @@
----
-- name: Exam2
-  hosts: localhost
-  gather_facts: false
-
-  tasks:
-    - name: Debug
-      ansible.builtin.debug:
-        msg: "APC"

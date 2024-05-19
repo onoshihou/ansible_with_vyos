@@ -1,9 +1,0 @@
-- name: Exam2
-  hosts: vyos
-  gather_facts: false
-
-  tasks:
-    - name: Disable interface
-      vyos.vyos.vyos_config:
-        ■■■■■■:
-          - delete interfaces ethernet eth0 disable
